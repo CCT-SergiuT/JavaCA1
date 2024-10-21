@@ -43,11 +43,17 @@ public class CA1 {
                 
                 //System.out.println(name + " " + surname + "\n" + purchVal + "\n" + custClass + "\n" + purchYear);
                 
+            //Create customer object
+            Customers customers = new Customers(name, surname, purchVal, custClass, purchYear);
+            
+            
                 
             }
         }catch(IOException error){
             error.printStackTrace();
         }
     }
+    
+
     
 }
