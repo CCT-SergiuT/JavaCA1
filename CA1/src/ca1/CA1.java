@@ -1,3 +1,5 @@
+//link to GitHub repo
+//https://giyhub.com/CCT-SergiuT/JavaCA1.git
 package ca1;
 //import java library for file reading, writing, excemptions etc.
 import java.io.*;
