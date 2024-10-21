@@ -51,7 +51,7 @@ public class CA1 {
                         continue;
                     }
                 
-                //read and assign customer class to variable and check if clas is in between 1 and 3
+                //read and assign customer class to variable and check if class is in between 1 and 3
                 line = breader.readLine();
                 int custClass;
                     try{
@@ -88,10 +88,10 @@ public class CA1 {
             //Create variable for calculated value after discount applied
             double finalValue = calcFinalValue(customers);
             
-            System.out.println(customers.getName() + " " + customers.getSurname() + "\n" + finalValue + "\n");
+            System.out.println(customers.getName2() + " " + customers.getSurname2() + "\n" + finalValue + "\n");
             
             //Write data to the file
-            bwriter.write(customers.getName() + " " + customers.getSurname() + "\n" + finalValue + "\n");
+            bwriter.write(customers.getName2() + " " + customers.getSurname2() + "\n" + finalValue + "\n");
             bwriter.flush();
             }
         }catch(IOException error){
@@ -106,11 +106,11 @@ public class CA1 {
         //create variable to keep discount value
         double discount;
         //create variable to get purchase year
-        int lastPurchase = customer.getPurchYear();
+        int lastPurchase = customer.getPurchYear2();
         //create variable to get customer class
-        int customerClass = customer.getCustClass();
+        int customerClass = customer.getCustClass2();
         //create variable to get purchase value
-        double totalPurchase = customer.getPurchVal();
+        double totalPurchase = customer.getPurchVal2();
         
         //using if loop to assign discount value based on conditions
         //1st criteria - customer calss is 1 and last purchase in 2024 => discount of 30%
@@ -140,6 +140,7 @@ public class CA1 {
         }
         
         //Calculate final value
+        //return totalPurchase - (totalPurchase * discount);
         return totalPurchase * (1 - discount);
     }
     
