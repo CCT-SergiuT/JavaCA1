@@ -17,7 +17,7 @@ public class CA1 {
             //reading data from the customer txt
             BufferedReader breader = new BufferedReader(new FileReader(filePath));
             //create variable to write data to the cust_discount txt
-            //BufferedWriter bwriter = new BufferedWriter(new FileWriter(outFilePath));
+            BufferedWriter bwriter = new BufferedWriter(new FileWriter(outFilePath));
             
             //create var line to get data from each line
             String line;
@@ -46,8 +46,14 @@ public class CA1 {
             //Create customer object
             Customers customers = new Customers(name, surname, purchVal, custClass, purchYear);
             
+            //Create variable for calculated value after discount applied
+            double finalValue = calcFinalValue(customers);
             
-                
+            //System.out.println(customers.getName() + " " + customers.getSurname() + "\n" + finalValue + "\n");
+            
+            //Write data to the file
+            bwriter.write(customers.getName() + " " + customers.getSurname() + "\n" + finalValue + "\n");
+            bwriter.flush();
             }
         }catch(IOException error){
             error.printStackTrace();
