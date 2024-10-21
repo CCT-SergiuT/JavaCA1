@@ -49,7 +49,7 @@ public class CA1 {
                         continue;
                     }
                 
-                //read and assign customer class to variable and check if clas is in between 1nad 3
+                //read and assign customer class to variable and check if clas is in between 1 and 3
                 line = breader.readLine();
                 int custClass;
                     try{
@@ -63,7 +63,7 @@ public class CA1 {
                         
                     }
                 
-                //read and assign purchase year to variable
+                //read and assign purchase year to variable and check if is a valid year
                 line = breader.readLine();
                 int purchYear;
                 int currentYear = 2024;
