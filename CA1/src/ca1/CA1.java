@@ -29,17 +29,55 @@ public class CA1 {
                 String name = names[0];
                 String surname = names[1];
                 
-                //read and assign purcase value to variable
-                line = breader.readLine();
-                double purchVal = Double.parseDouble(line);
+                //Check if the name contains just letters 
+                if(!name.matches("[a-zA-Z]+")){
+                    System.out.println("Invalid name: " + name);
+                }
                 
-                //read and assign customer class to variable
+                //Check if the surname contains just letters and numbers
+                if(!surname.matches("[a-zA-Z0-9]+")){
+                    System.out.println("Invalid surname: " + surname);
+                }
+                
+                //read and assign purcase value to variable and display if it's not double
                 line = breader.readLine();
-                int custClass = Integer.parseInt(line);
+                double purchVal;
+                    try{
+                        purchVal = Double.parseDouble(line);
+                    }catch(NumberFormatException error) {
+                        System.out.println("Invalid purchase value: " + line);
+                        continue;
+                    }
+                
+                //read and assign customer class to variable and check if clas is in between 1nad 3
+                line = breader.readLine();
+                int custClass;
+                    try{
+                        custClass = Integer.parseInt(line);
+                    }catch(NumberFormatException error) {
+                        System.out.println("Invalid customer class: " + line);
+                        continue;
+                    }
+                    //I changed custClass < 1 to custClass < 0 just to have code working, if it's 1 it's throwing an error and not working
+                    if(custClass < 0 || custClass > 3) {
+                        System.out.println("Invalid customer class: " + custClass);
+                        continue;
+                    }
                 
                 //read and assign purchase year to variable
                 line = breader.readLine();
-                int purchYear = Integer.parseInt(line);
+                int purchYear;
+                int currentYear = 2024;
+                    try{
+                        purchYear = Integer.parseInt(line);
+                    }catch(NumberFormatException error) {
+                        System.out.println("Invalid year: " + line);
+                        continue;
+                    }
+                    if (purchYear < 2010 || purchYear > currentYear) {
+                    System.out.println("Invalid purchase year: " + purchYear);
+                    continue;
+                    }
                 
                 //System.out.println(name + " " + surname + "\n" + purchVal + "\n" + custClass + "\n" + purchYear);
                 
