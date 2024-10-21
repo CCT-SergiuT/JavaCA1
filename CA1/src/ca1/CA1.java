@@ -58,10 +58,9 @@ public class CA1 {
                         System.out.println("Invalid customer class: " + line);
                         continue;
                     }
-                    //I changed custClass < 1 to custClass < 0 just to have code working, if it's 1 it's throwing an error and not working
-                    if(custClass < 0 || custClass > 3) {
+                    if(custClass < 1 || custClass > 3) {
                         System.out.println("Invalid customer class: " + custClass);
-                        continue;
+                        
                     }
                 
                 //read and assign purchase year to variable
@@ -87,7 +86,7 @@ public class CA1 {
             //Create variable for calculated value after discount applied
             double finalValue = calcFinalValue(customers);
             
-            //System.out.println(customers.getName() + " " + customers.getSurname() + "\n" + finalValue + "\n");
+            System.out.println(customers.getName() + " " + customers.getSurname() + "\n" + finalValue + "\n");
             
             //Write data to the file
             bwriter.write(customers.getName() + " " + customers.getSurname() + "\n" + finalValue + "\n");
